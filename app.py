@@ -87,5 +87,6 @@ def predict():
     return render_home(prediction_text=f"Prediction: {pred_display}", form_values=form_values)
 
 if __name__ == "__main__":
-    # Change port here if 5000 is taken (e.g., AirPlay). 5001 is safe.
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render PORT dega
+    app.run(host="0.0.0.0", port=port, debug=True)
+
